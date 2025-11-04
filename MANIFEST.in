@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include INSTALL.md
+include pyproject.toml
+include requirements.txt
+include install.sh
+include verify_install.py
+include example.py
+recursive-include dbinfer_relbench_adapter *.py
