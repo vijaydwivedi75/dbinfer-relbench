@@ -23,6 +23,9 @@ dataset, task = load_dbinfer_data("diginetica", "ctr")
 
 dataset = 'diginetica'
 task = 'ctr'
+```
+
+```diff
 - dataset: Dataset = get_dataset(dataset, download=True) # for relbench data
 - task: EntityTask = get_task(dataset, task, download=True) # for relbench task
 + dataset, task = load_dbinfer_data(dataset, task) # use this line instead
