@@ -26,7 +26,7 @@ from .adapters import DBInferDatasetAdapter, DBInferTaskAdapter
 from .loader import load_dbinfer_data
 from .cache import clear_cache, get_cache_dir, get_cache_path
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 __all__ = [
     "DBInferDatasetAdapter",

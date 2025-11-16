@@ -258,10 +258,11 @@ class DBInferTaskAdapter:
                 "accuracy": accuracy_score(true_labels, prob_pred > 0.5)
             }
         elif self.task_type == TaskType.MULTICLASS_CLASSIFICATION:
-            from sklearn.metrics import accuracy_score
+            from sklearn.metrics import accuracy_score, f1_score
             pred_classes = pred.argmax(axis=1) if pred.ndim > 1 else pred
             return {
-                "accuracy": accuracy_score(true_labels, pred_classes)
+                "accuracy": accuracy_score(true_labels, pred_classes),
+                "multicass_f1": f1_score(true_labels, pred_classes, average='macro')
             }
         elif self.task_type == TaskType.REGRESSION:
             from sklearn.metrics import mean_absolute_error, mean_squared_error

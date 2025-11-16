@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dbinfer-relbench-adapter"
-version = "0.1.2"
+version = "0.1.3"
 description = "Adapter to bridge DBInfer datasets and tasks to the RelBench interface with caching support"
 readme = "README.md"
 license = {text = "MIT"}
