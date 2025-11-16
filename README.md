@@ -6,8 +6,10 @@ Adapter to use [DBInfer datasets](https://github.com/awslabs/multi-table-benchma
 
 ```bash
 pip install dbinfer-relbench-adapter
-pip install dgl -f https://data.dgl.ai/wheels/torch-2.3/repo.html
+pip install dgl -f https://data.dgl.ai/wheels/torch-2.3/cu121/repo.html
 ```
+
+>Note: Due to deprecation of `dgl` project, you may need to run this library separately in its own virtual environment, as it may conflict with other dependencies such as `torch` in your usual working environment. The recommendation is to create a new environment, load the datasets - which caches them locally - and then use the cached datasets in your main working environment.
 
 ## Example
 
@@ -29,6 +31,14 @@ task = 'ctr'
 - dataset: Dataset = get_dataset(dataset, download=True) # for relbench data
 - task: EntityTask = get_task(dataset, task, download=True) # for relbench task
 + dataset, task = load_dbinfer_data(dataset, task) # use this line instead
+```
+
+## Install and cache all datasets
+
+To install and cache all datasets locally, you can run the following script:
+
+```bash
+python cache_all_data.py ./<your_cache_dir>
 ```
 
 ## Full list of supported datasets and tasks
